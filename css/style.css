@@ -1,1 +1,37 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
+header {
+    background: #1e1e1e;
+    color: #fff;
+    padding: 10px;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
+
+.product-card {
+    width: 40%;
+    margin: 15px;
+    float: left;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .product-card {
+        width: 100%;
+        float: none;
+    }
+}
