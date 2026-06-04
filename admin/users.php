@@ -1,27 +1,23 @@
 <?php
 
 include("../db/db.php");
-
 session_start();
 
-if (isset($_SESSION["role"]) || $_SESSION["role"] != "admin") {
-
+if (!isset($_SESSION["role"]) || $_SESSION["role"] != "admin") {
     header("Location: ../login.php");
-
     exit();
 }
 
-$result = mysqli_query($conn, "SELECT*FROM user");
+$result = mysqli_query($conn, "SELECT * FROM users");
 
 if (isset($_POST["add"])) {
-    $username = $_POST["username"];
-    $pass = $_POST["password"];
-    $role = $_POST["role"];
-    mysqli_query($conn, "INSERT INTO users (username,password,role)VALUES('$username', '$pass', '$role')");
+    $username = mysqli_real_escape_string($conn, $_POST["username"]);
+    $pass = sha1($_POST["password"]);
+    $role = mysqli_real_escape_string($conn, $_POST["role"]);
+    mysqli_query($conn, "INSERT INTO users (username,password,role) VALUES('$username', '$pass', '$role')");
     header("Location: users.php");
-
+    exit();
 }
-
 
 ?>
 
