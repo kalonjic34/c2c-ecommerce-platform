@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Checkout</h1>
+        <nav>
+            <a href="cart.html">Back to Cart</a>
+        </nav>
+    </header>
+
+    <div class="checkout">
+        <form action="process_order.php" method="post">
+            <label for="">Name:</label>
+            <input type="text" name="name" required><br>
+            <label for="">Adress</label>
+            <input for="text" name="address" required><br>
+            <label for="">Payment Method</label>
+            <select name="payment" id="">
+                <option value="cash">Cash on delivery</option>
+                <option value="card">Credit Cash</option>
+            </select><br>
+            <button type="submit">Place order</button>
+        </form>
+    </div>
+</body>
+
+</html>
