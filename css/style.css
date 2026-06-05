@@ -85,6 +85,11 @@ section {
     color: #65748b;
 }
 
+/* .product-details img {
+    width: 600px;
+    height: 600px;
+} */
+
 .product-card a,
 .product-card button,
 button {

@@ -1,8 +1,7 @@
 <?php
 
 session_start();
-if (isset($_SESSION["role"]) && $_SESSION["role"] != 'admin') {
-
+if (!isset($_SESSION["role"]) || $_SESSION["role"] != 'admin') {
     header("Location:../login.php");
     exit();
 }
@@ -17,7 +16,13 @@ if (isset($_SESSION["role"]) && $_SESSION["role"] != 'admin') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        h1 {
+            text-align: center;
+        }
+    </style>
 </head>
+
 
 <body>
     <h1>Dashboard</h1>
